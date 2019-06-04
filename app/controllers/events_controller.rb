@@ -15,10 +15,10 @@ class EventsController < OpenReadController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
 
     if @event.save
-      render json: @event, status: :created, location: @event
+      render json: @event, status: :created
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -41,11 +41,11 @@ class EventsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = current_user.events.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:id, :displayName, :date, :time, :user_id)
+      params.require(:event).permit(:id, :name, :date, :time, :venue, :details, :user_id)
     end
 end

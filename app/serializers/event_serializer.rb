@@ -1,5 +1,5 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :event_id, :displayName, :date, :time
+  attributes :id, :type, :name, :date, :time, :venue, :details, :editable
   has_one :user
   def editable
     scope == object.user

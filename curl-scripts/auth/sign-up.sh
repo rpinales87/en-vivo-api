@@ -1,4 +1,7 @@
 #!/bin/bash
+EMAIL="envivo@envivo.com"
+PASSWORD="test"
+PASSWORD="test"
 
 curl "http://localhost:4741/sign-up" \
   --include \

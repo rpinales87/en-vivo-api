@@ -2,6 +2,12 @@
 -------------------------
 Welcome to enVivo API, this API was built to interact with enVivo web app, which is an app to find and create live events. Keep reading for more details.
 
+### Installation instructions
+-------------------------
+This is a open source project if like to contribute or have your own copy there's only two steps to follow:
+- Fork and clone repo
+- Install dependencies with bundle install
+
 ### Technologies used
 -------------------------
 
